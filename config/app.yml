@@ -1,0 +1,24 @@
+all:
+  pixImage:
+    pictures:
+      upload_dir: %SF_WEB_DIR%/medias
+      public_path: /medias
+      permissions: 0777
+      adapterClass: sfImageMagickAdapter  # sfGDAdapter or sfImageMagickAdapter
+      adapterOptions:
+        convert: /opt/local/bin/convert            # see sfImageTransform documentation
+        identify: /opt/local/bin/identify            # see sfImageTransform documentation
+
+    product: ## lower case name of the model to be associated
+      large:
+        description: Description displayed in the backend
+        width: 400
+        height: 200
+        quality: 100
+        method: center ## methods available: center, fit, scale (see sfImageTransform documentation)
+      thumb:
+        description: Description displayed in the backend
+        width: 200
+        height: 100
+        quality: 100
+        method: center ## methods available: center, fit, scale (see sfImageTransform documentation)

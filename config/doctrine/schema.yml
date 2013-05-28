@@ -1,0 +1,22 @@
+PixImage:
+  tableName: pix_images
+
+  columns:
+    classname: string(255)
+    object_id: integer
+    type: string(255)
+    location: string(255)
+    rank: integer
+    label: clob
+    is_custom_format: boolean
+    occurence:
+      type: integer
+      default: 1
+
+  actAs:
+    Timestampable:
+
+
+  options:
+    collate: utf8_unicode_ci
+    charset: utf8
