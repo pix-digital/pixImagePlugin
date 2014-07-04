@@ -19,13 +19,14 @@ abstract class PluginPixImage extends BasePixImage
 
     /**
      * Create required folder to save current object
+     * update 04/07/14: to avoid open_base_dir restriction we define the sf_web_dir in the initial path
      *
      */
     public function initFolders()
     {
-        $path = '';
+        $path = sfConfig::get('sf_web_dir');
 
-        foreach (explode('/', $this->getFullBasePath()) as $folder) {
+        foreach (explode('/', $this->getPublicPath()) as $folder) {
             if (empty($folder)) {
                 continue;
             }
